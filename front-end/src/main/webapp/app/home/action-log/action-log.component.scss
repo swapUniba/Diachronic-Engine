@@ -1,0 +1,20 @@
+#action-log {
+  padding: 1rem;
+  border: 2px solid #e6e6e6;
+  border-radius: 0.5rem;
+
+  .action-container {
+    background-color: #e6e6e6;
+    border: 2px solid #ccc;
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      font-weight: normal;
+      text-decoration: none;
+    }
+  }
+}

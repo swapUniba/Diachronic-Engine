@@ -1,0 +1,11 @@
+{
+  "corpusManagerApp": {
+    "Action": {
+      "null": "",
+      "FREQUENCY_LIST": "Lista frequenze",
+      "COLLOCATION": "Collocation",
+      "TIME_SERIES": "Time series",
+      "CONCORDANCE": "Concordanze"
+    }
+  }
+}

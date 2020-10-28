@@ -1,0 +1,6 @@
+export const enum Action {
+  FREQUENCY_LIST,
+  COLLOCATION,
+  TIME_SERIES,
+  CONCORDANCE
+}

@@ -1,0 +1,86 @@
+.menu-user-data {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 6rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .button-user-data {
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.04);
+    border-radius: 100%;
+    border-width: 2px;
+    overflow: hidden;
+
+    img {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 100%;
+    }
+  }
+
+  ::ng-deep div.mat-select-arrow-wrapper {
+    display: none;
+  }
+
+  ::ng-deep .mat-select {
+    display: inline;
+    width: 0;
+  }
+}
+
+.user-data-option {
+  padding: 0;
+
+  &.mat-active {
+    background: none;
+  }
+
+  a {
+    font-weight: 100;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: left;
+    width: 100%;
+    display: block;
+    height: 100%;
+    line-height: 3.75rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  ::ng-deep .mat-select-panel {
+    margin-left: 1.5rem;
+    margin-bottom: -1.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .menu-user-data {
+    position: unset;
+    padding: 0 0.5rem 0 0;
+    height: 4rem;
+    left: unset;
+    right: unset;
+    bottom: unset;
+
+    .button-user-data {
+      padding: 0.25rem;
+      min-width: unset;
+
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+
+  ::ng-deep .mat-select-panel {
+    margin-top: 3.5rem;
+  }
+}

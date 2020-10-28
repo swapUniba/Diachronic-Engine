@@ -1,0 +1,26 @@
+{
+  "corpusManagerApp": {
+    "actionLog": {
+      "home": {
+        "title": "ActionLogs",
+        "createLabel": "Genera un nuovo Action Log",
+        "createOrEditLabel": "Genera o modifica un Action Log",
+        "search": "Cerca Action Log",
+        "notFound": "No Action Logs found"
+      },
+      "created": "&Egrave; stato generato un nuovo Action Log con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Action Log identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Action Log con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare questa azione?"
+      },
+      "detail": {
+        "title": "Action Log"
+      },
+      "corpusId": "Corpus Id",
+      "corpusName": "Corpus Name",
+      "action": "Action",
+      "request": "Request"
+    }
+  }
+}

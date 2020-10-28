@@ -1,0 +1,101 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="corpusManagerApp.language.home.title">Languages</span>
+
+        <button [routerLink]="['/language/new']" class="btn btn-primary float-right jh-create-entity create-language"
+                id="jh-create-entity">
+            <fa-icon icon="plus"></fa-icon>
+            <span class="hidden-sm-down" jhiTranslate="corpusManagerApp.language.home.createLabel">
+            Create a new Language
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="form-inline" name="searchForm">
+                <div class="input-group w-100 mt-3">
+                    <input [(ngModel)]="currentSearch" class="form-control" id="currentSearch" name="currentSearch"
+                           placeholder="{{ 'corpusManagerApp.language.home.search' | translate }}" type="text">
+
+                    <button (click)="search(currentSearch)" class="input-group-append btn btn-info">
+                        <fa-icon icon="search"></fa-icon>
+                    </button>
+
+                    <button (click)="search('')" *ngIf="currentSearch" class="input-group-append btn btn-danger">
+                        <fa-icon icon="trash-alt"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div *ngIf="languages?.length === 0" class="alert alert-warning" id="no-result">
+        <span jhiTranslate="corpusManagerApp.language.home.notFound">No languages found</span>
+    </div>
+
+    <div *ngIf="languages?.length > 0" class="table-responsive" id="entities">
+        <table aria-describedby="page-heading" class="table table-striped">
+            <thead>
+            <tr [(ascending)]="ascending" [(predicate)]="predicate" [callback]="loadPage.bind(this)" jhiSort>
+                <th jhiSortBy="id" scope="col"><span jhiTranslate="global.field.id">ID</span>
+                    <fa-icon icon="sort"></fa-icon>
+                </th>
+                <th jhiSortBy="name" scope="col"><span jhiTranslate="corpusManagerApp.language.name">Name</span>
+                    <fa-icon icon="sort"></fa-icon>
+                </th>
+                <th jhiSortBy="code" scope="col"><span jhiTranslate="corpusManagerApp.language.code">Code</span>
+                    <fa-icon icon="sort"></fa-icon>
+                </th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let language of languages ;trackBy: trackId">
+                <td><a [routerLink]="['/language', language.id, 'view']">{{ language.id }}</a></td>
+                <td>{{ language.name }}</td>
+                <td>{{ language.code }}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button [routerLink]="['/language', language.id, 'view']"
+                                class="btn btn-info btn-sm"
+                                type="submit">
+                            <fa-icon icon="eye"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+
+                        <button [routerLink]="['/language', language.id, 'edit']"
+                                class="btn btn-primary btn-sm"
+                                type="submit">
+                            <fa-icon icon="pencil-alt"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+
+                        <button (click)="delete(language)" class="btn btn-danger btn-sm"
+                                type="submit">
+                            <fa-icon icon="times"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="languages?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [itemsPerPage]="itemsPerPage" [page]="page" [total]="totalItems"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination (pageChange)="loadPage($event)" [(page)]="ngbPaginationPage" [boundaryLinks]="true"
+                            [collectionSize]="totalItems" [maxSize]="5" [pageSize]="itemsPerPage"
+                            [rotate]="true"></ngb-pagination>
+        </div>
+    </div>
+</div>

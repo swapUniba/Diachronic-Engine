@@ -1,0 +1,20 @@
+entity Corpus {
+	name String required minlength(1) maxlength(255),
+    periodStart Integer min(0) max(9999),
+    periodEnd Integer min(0) max(9999),
+    file String required
+}
+
+entity Language {
+	name String required minlength(1) maxlength(255),
+    code String required minlength(2) maxlength(2)
+}
+
+relationship ManyToOne {
+    Corpus{language} to Language
+}
+
+paginate * with pagination
+dto * with mapstruct
+service * with serviceImpl
+search * with elasticsearch

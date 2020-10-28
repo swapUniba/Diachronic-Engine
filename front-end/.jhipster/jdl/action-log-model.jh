@@ -1,0 +1,15 @@
+entity ActionLog {
+	corpusId Long required,
+    corpusName String required minlength(1) maxlength(255),
+    action Action required,
+ 	request String required minlength(1) maxlength(255)
+}
+
+enum Action {
+	FREQUENCY_LIST, COLLOCATION, TIME_SERIES, CONCORDANCE
+}
+
+paginate * with pagination
+dto * with mapstruct
+service * with serviceImpl
+search * with elasticsearch

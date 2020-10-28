@@ -1,0 +1,23 @@
+<section id="actions-container">
+    <a class="shadow-sm" mat-button routerLink="frequency-list"
+       routerLinkActive="mat-accent">
+        <mat-icon>menu_open</mat-icon>
+        {{'frequency-list.title' | translate}}
+    </a>
+    <a class="shadow-sm" mat-button routerLink="collocation"
+       routerLinkActive="mat-accent">
+        <mat-icon>radio_button_checked</mat-icon>
+        {{'collocation.title' | translate}}
+    </a>
+    <a class="shadow-sm" mat-button routerLink="time-series"
+       routerLinkActive="mat-accent">
+        <mat-icon>trending_up</mat-icon>
+        {{'time-series.title' | translate}}
+    </a>
+    <a class="shadow-sm" mat-button routerLink="concordance"
+       routerLinkActive="mat-accent">
+        <mat-icon>settings_ethernet</mat-icon>
+        {{'concordance.title' | translate}}
+    </a>
+</section>
+<jhi-action-log></jhi-action-log>

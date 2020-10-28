@@ -1,0 +1,16 @@
+{
+  "error": {
+    "title": "Pagina di errore!",
+    "http": {
+      "400": "Bad request.",
+      "403": "Non si dispongono i privilegi sufficienti per accedere a qusta pagina.",
+      "404": "La pagina non esiste.",
+      "405": "The HTTP verb you used is not supported for this URL.",
+      "500": "Internal server error."
+    },
+    "concurrencyFailure": "Un altro utente ha modificato questi dati nello stesso momento. I tuoi cambiamenti sono stati annullati.",
+    "validation": "Errore di validazione sul server.",
+    "invalidCredentials": "Non si dispongono i privilegi sufficienti per esegurie l'operazione",
+    "invalidDate": "Date non valide"
+  }
+}

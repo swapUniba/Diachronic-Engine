@@ -1,0 +1,39 @@
+{
+  "name": "Language",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "minlength",
+        "maxlength"
+      ],
+      "fieldValidateRulesMinlength": "1",
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "minlength",
+        "maxlength"
+      ],
+      "fieldValidateRulesMinlength": "2",
+      "fieldValidateRulesMaxlength": "2"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200423184700",
+  "entityTableName": "language",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "clientRootFolder": "",
+  "applications": "*",
+  "searchEngine": "elasticsearch"
+}

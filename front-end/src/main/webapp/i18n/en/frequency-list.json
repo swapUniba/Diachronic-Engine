@@ -1,0 +1,31 @@
+{
+  "frequency-list": {
+    "title": "Frequency list",
+    "search": {
+      "type": {
+        "words": "words",
+        "lemmas": "lemmas",
+        "nouns": "nouns",
+        "verbs": "verbs",
+        "adjectives": "adjectives",
+        "adverbs": "adverbs",
+        "pronouns": "pronouns",
+        "conjunctions": "conjunction",
+        "prepositions": "prepositions",
+        "numerals": "numeral"
+      },
+      "filter": {
+        "all": "all",
+        "starting_with": "starting with",
+        "ending_with": "ending with",
+        "containing": "containing"
+      }
+    },
+    "table": {
+      "heading": {
+        "word": "Word",
+        "frequency": "Frequency"
+      }
+    }
+  }
+}

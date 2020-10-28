@@ -1,0 +1,186 @@
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav *ngIf="isAuthenticated()" [class.desktop-menu]="!isMobile()" [mode]="isMobile() ? 'over' : 'side'" [opened]="!isMobile()">
+        <div id="logo-container">
+            <img alt="Docus" class="w-100" src="/content/images/logo-white.svg">
+        </div>
+        <ul>
+            <li>
+                <a (click)="sidenavAction();closeAllAccordions()" [routerLinkActiveOptions]="{exact:true}"
+                    mat-button routerLink="/"
+                    routerLinkActive="mat-accent">
+                    <mat-icon>dashboard</mat-icon>
+                    {{'home.title' | translate}}
+                </a>
+            </li>
+            <li>
+                <a (click)="sidenavAction();closeAllAccordions()"
+                    mat-button routerLink="frequency-list"
+                    routerLinkActive="mat-accent">
+                    <mat-icon>menu_open</mat-icon>
+                    {{'frequency-list.title' | translate}}
+                </a>
+            </li>
+            <li>
+                <a (click)="sidenavAction();closeAllAccordions()"
+                    mat-button routerLink="collocation"
+                    routerLinkActive="mat-accent">
+                    <mat-icon>radio_button_checked</mat-icon>
+                    {{'collocation.title' | translate}}
+                </a>
+            </li>
+            <li>
+                <a (click)="sidenavAction();closeAllAccordions()"
+                    mat-button routerLink="time-series"
+                    routerLinkActive="mat-accent">
+                    <mat-icon>trending_up</mat-icon>
+                    {{'time-series.title' | translate}}
+                </a>
+            </li>
+            <li>
+                <a (click)="sidenavAction();closeAllAccordions()"
+                    mat-button routerLink="concordance"
+                    routerLinkActive="mat-accent">
+                    <mat-icon>settings_ethernet</mat-icon>
+                    {{'concordance.title' | translate}}
+                </a>
+            </li>
+            <li>
+                <a (click)="sidenavAction();closeAllAccordions()"
+                    mat-button routerLink="corpus"
+                    routerLinkActive="mat-accent">
+                    <mat-icon>description</mat-icon>
+                    {{'global.menu.entities.corpus' | translate}}
+                </a>
+            </li>
+            <li *jhiHasAnyAuthority="'ROLE_ADMIN'">
+                <a (click)="sidenavAction();closeAllAccordions()"
+                    mat-button
+                    routerLink="language"
+                    routerLinkActive="mat-accent">
+                    <mat-icon>outlined_flag</mat-icon>
+                    {{'global.menu.entities.language' | translate}}
+                </a>
+            </li>
+            <li *jhiHasAnyAuthority="'ROLE_ADMIN'">
+                <a (click)="sidenavAction();closeAllAccordions()"
+                    mat-button
+                    routerLink="admin/user-management"
+                    routerLinkActive="mat-accent">
+                    <mat-icon>group</mat-icon>
+                    {{'userManagement.home.title' | translate}}
+                </a>
+            </li>
+            <mat-accordion>
+                <mat-expansion-panel *ngIf="languages && languages.length > 1" class="mt-3">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{'global.menu.language' | translate}}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ul class="p-0">
+                        <li *ngFor="let language of languages">
+                            <a (click)="changeLanguage(language);sidenavAction();closeAllAccordions();" [jhiActiveMenu]="language"
+                                href="javascript:void(0);" mat-button>
+                                <img [src]="'/content/images/flags/' + language + '.svg'" alt="{{language | findLanguageFromKey}}">
+                                {{language | findLanguageFromKey}}
+                            </a>
+                        </li>
+                    </ul>
+                </mat-expansion-panel>
+                <mat-expansion-panel *jhiHasAnyAuthority="'ROLE_ADMIN'" class="mt-3">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{'global.menu.admin.main' | translate}}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ul class="p-0">
+                        <li>
+                            <a (click)="sidenavAction();closeAllAccordions();"
+                                mat-button
+                                routerLink="admin/metrics"
+                                routerLinkActive="mat-accent">
+                                <fa-icon class="mr-2" fixedWidth="true" icon="tachometer-alt"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.metrics">Metrics</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="sidenavAction();closeAllAccordions();" mat-button
+                                                                               routerLink="admin/health"
+                                                                               routerLinkActive="mat-accent">
+                                <fa-icon class="mr-2" fixedWidth="true" icon="heart"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.health">Health</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="sidenavAction();closeAllAccordions();" mat-button
+                                                                               routerLink="admin/configuration"
+                                                                               routerLinkActive="mat-accent">
+                                <fa-icon class="mr-2" fixedWidth="true" icon="list"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.configuration">Configuration</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="sidenavAction();closeAllAccordions();" mat-button
+                                                                               routerLink="admin/audits"
+                                                                               routerLinkActive="mat-accent">
+                                <fa-icon class="mr-2" fixedWidth="true" icon="bell"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.audits">Audits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="sidenavAction();closeAllAccordions();" mat-button
+                                                                               routerLink="admin/logs"
+                                                                               routerLinkActive="mat-accent">
+                                <fa-icon class="mr-2" fixedWidth="true" icon="tasks"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.logs">Logs</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="sidenavAction();closeAllAccordions();" mat-button
+                                                                               routerLink="admin/tracker"
+                                                                               routerLinkActive="mat-accent">
+                                <fa-icon [fixedWidth]="true" [icon]="'eye'" class="mr-2"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.tracker">Tracker</span>
+                            </a>
+                        </li>
+                        <li *ngIf="swaggerEnabled">
+                            <a (click)="sidenavAction();closeAllAccordions();" mat-button
+                                                                               routerLink="admin/docs"
+                                                                               routerLinkActive="mat-accent">
+                                <fa-icon class="mr-2" fixedWidth="true" icon="book"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.apidocs">API</span>
+                            </a>
+                        </li>
+                        <li *ngIf="!inProduction">
+                            <a (click)="sidenavAction();closeAllAccordions();" href='./h2-console'
+                                                                               mat-button target="_tab">
+                                <fa-icon class="mr-2" fixedWidth="true" icon="hdd"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.database">Database</span>
+                            </a>
+                        </li>
+                    </ul>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </ul>
+        <jhi-user-links *ngIf="!isMobile()"></jhi-user-links>
+    </mat-sidenav>
+    <mat-sidenav-content [class.p-0]="!isAuthenticated()" [class.topnav-open]="isAuthenticated() && isMobile()"
+        class="px-0 pt-0">
+        <mat-toolbar *ngIf="isAuthenticated()" [class.open]="isMobile()" id="topnav">
+            <button (click)="sidenav.toggle()" class="rounded-0" mat-button>
+                <mat-icon aria-hidden="false" aria-label="Menu">menu</mat-icon>
+            </button>
+            <div id="topnav-logo-container">
+                <img alt="Docus" class="w-100" src="/content/images/logo-white.svg">
+            </div>
+            <jhi-user-links *ngIf="isMobile()" class="ml-auto"></jhi-user-links>
+        </mat-toolbar>
+        <div [class.container-fluid]="isAuthenticated()" [class.h-100]="!isAuthenticated()">
+            <div [class.h-100]="!isAuthenticated()" [ngClass]="{'card jh-card': isAuthenticated()}">
+                <jhi-corpus-selection *ngIf="isAuthenticated()"></jhi-corpus-selection>
+                <router-outlet></router-outlet>
+            </div>
+            <!-- <jhi-footer></jhi-footer> -->
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

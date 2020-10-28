@@ -1,0 +1,30 @@
+<section class="shadow-sm" id="action-log">
+    <h4>{{'action-log.title' | translate}}</h4>
+    <div *ngFor="let actionLog of actionLogs ;trackBy: trackId" class="row action-container p-2 rounded">
+        <a class="col-8 p-0" href="{{actionLog.request}}">
+            <h6 class="m-0">{{ actionLog.corpusName }}</h6>
+            <p class="small"
+               jhiTranslate="{{ 'corpusManagerApp.Action.' + actionLog.action }}">{{ actionLog.action }}</p>
+        </a>
+        <div class="col-4 p-0 text-right">
+            <span class="align-middle">{{actionLog.createdDate | date:'yyyy-MM-dd HH:mm:ss' }}</span>
+            <div class="btn-group">
+                <button (click)="delete(actionLog)" mat-icon-button
+                        type="submit">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="actionLogs?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [itemsPerPage]="itemsPerPage" [page]="page" [total]="totalItems"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination (pageChange)="loadPage($event)" [(page)]="ngbPaginationPage" [boundaryLinks]="true"
+                            [collectionSize]="totalItems" [maxSize]="5" [pageSize]="itemsPerPage"
+                            [rotate]="true"></ngb-pagination>
+        </div>
+    </div>
+</section>

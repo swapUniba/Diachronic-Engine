@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="language">
+            <h2><span jhiTranslate="corpusManagerApp.language.detail.title">Language</span> {{ language.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="corpusManagerApp.language.name">Name</span></dt>
+                <dd>
+                    <span>{{ language.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="corpusManagerApp.language.code">Code</span></dt>
+                <dd>
+                    <span>{{ language.code }}</span>
+                </dd>
+            </dl>
+
+            <button (click)="previousState()"
+                    class="btn btn-info"
+                    type="submit">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button [routerLink]="['/language', language.id, 'edit']"
+                    class="btn btn-primary"
+                    type="button">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

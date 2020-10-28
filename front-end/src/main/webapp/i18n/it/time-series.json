@@ -1,0 +1,13 @@
+{
+  "time-series": {
+    "title": "Serie temporali",
+    "standard": "Standard",
+    "similarity": "Similarità",
+    "search": {
+      "addTerm": "Aggiungi termine",
+      "addTerms": "Aggiungi coppia di termini"
+    },
+    "showShiftingPoints": "Mostra i punti di cambio",
+    "hideShiftingPoints": "Nascondi i punti di cambio"
+  }
+}

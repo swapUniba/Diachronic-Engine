@@ -1,0 +1,36 @@
+<mat-card id="concordance-search">
+    <form (ngSubmit)="concordanceRequest()" [formGroup]="searchForm" name="form" role="form">
+        <div class="form-group" id="search-container">
+            <label class="form-control-label" for="search" jhiTranslate="global.form.search">Search</label>
+            <input class="form-control" formControlName="search" id="search" name="search"
+                   placeholder="{{ 'global.form.search.placeholder' | translate }}"
+                   type="text">
+            <div
+                *ngIf="searchForm.get('search')!.invalid && (searchForm.get('search')!.dirty || searchForm.get('search')!.touched)">
+                <small *ngIf="searchForm.get('search')?.errors?.required"
+                       class="form-text text-danger"
+                       jhiTranslate="global.form.search.required">
+                    This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group date-container position-relative">
+            <label class="form-control-label" for="start-date" jhiTranslate="global.form.search.startDate">Start
+                date</label>
+            <input (click)="startDatePicker.open()" [matDatepicker]="startDatePicker" [max]="endDatePicker._selected"
+                   class="form-control" formControlName="startDate" id="start-date" name="start-date">
+            <mat-datepicker-toggle [for]="startDatePicker" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #startDatePicker></mat-datepicker>
+        </div>
+        <div class="form-group date-container position-relative">
+            <label class="form-control-label" for="end-date" jhiTranslate="global.form.search.endDate">End date</label>
+            <input (click)="endDatePicker.open()" [matDatepicker]="endDatePicker" [min]="startDatePicker._selected"
+                   class="form-control" formControlName="endDate" id="end-date" name="end-date">
+            <mat-datepicker-toggle [for]="endDatePicker" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #endDatePicker></mat-datepicker>
+        </div>
+        <button [disabled]="searchForm.invalid || workingCorpus < 0" class="mat-accent ml-auto mr-0 d-block"
+                jhiTranslate="global.form.search" mat-button type="submit">Search
+        </button>
+    </form>
+</mat-card>

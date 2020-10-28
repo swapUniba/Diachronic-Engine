@@ -1,0 +1,24 @@
+{
+  "corpusManagerApp": {
+    "language": {
+      "home": {
+        "title": "Lingue",
+        "createLabel": "Aggiungi una nuova lingua",
+        "createOrEditLabel": "Aggiungi o modifica una lingua",
+        "search": "Cerca lingua",
+        "notFound": "Nessuna lingua trovata"
+      },
+      "created": "&Egrave; stato generata una nuova lingua con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornata lingua identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminata lingua con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare la lingua con id {{ id }}?"
+      },
+      "detail": {
+        "title": "Lingua"
+      },
+      "name": "Nome",
+      "code": "Sigla"
+    }
+  }
+}

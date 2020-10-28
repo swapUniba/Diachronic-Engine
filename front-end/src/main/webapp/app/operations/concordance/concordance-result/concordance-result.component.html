@@ -1,0 +1,66 @@
+<div class="py-3">
+    <h2 jhiTranslate="concordance.title">Concordance</h2>
+    <ng-template #customLoadingTemplate>
+        <div class="custom-class">
+            <h3>
+                Loading...
+            </h3>
+        </div>
+        </ng-template>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }" [template]="customLoadingTemplate"></ngx-loading>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <h4>{{"global.form.search" | translate}} {{"global.terms.of" | translate}} "{{concordanceResults.search}}"
+        <span *ngIf="startDate">{{"global.terms.from" | translate}} {{startDate}}</span>
+        <span *ngIf="endDate">{{"global.terms.to" | translate}} {{endDate}}</span>
+    </h4>
+    <section id="concordance-result-container">
+        <ng-container *ngIf="concordanceResults">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col"><span>#</span></th>
+                        <th scope="col"><span jhiTranslate="concordance.table.heading.source"></span></th>
+                        <th scope="col"><span jhiTranslate="concordance.table.heading.date"></span></th>
+                        <th class="text-right" scope="col"><span
+                            jhiTranslate="concordance.table.heading.leftContext"></span></th>
+                        <th scope="col"><span jhiTranslate="concordance.table.heading.kwic"></span></th>
+                        <th scope="col"><span jhiTranslate="concordance.table.heading.rightContext"></span></th>
+                        <th class="text-center" scope="col"><span jhiTranslate="concordance.table.heading.copy"></span>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody *ngIf="concordanceResults.values?.length > 0">
+                    <tr *ngFor="let value of concordanceResults.values; let i = index" class="small">
+                        <td>{{(i + (20*(page-1)))+1}}</td>
+                        <td>{{value.source}}</td>
+                        <td>{{value.date}}</td>
+                        <td class="text-right text-nowrap">{{value.leftContext}}</td>
+                        <td class="font-weight-bold text-danger text-center">{{value.kwic}}</td>
+                        <td class="text-nowrap">{{value.rightContext}}</td>
+                        <td>
+                            <button [cbContent]="value.leftContext + ' ' + value.kwic + ' ' + value.rightContext"
+                                    class="mat-accent copy-button" mat-button
+                                    (cbOnSuccess)="showCopiedMessage()" ngxClipboard>
+                                <mat-icon>file_copy</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </ng-container>
+    </section>
+    <div *ngIf="concordanceResults?.values?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [itemsPerPage]="itemsPerPage" [page]="page" [total]="totalItems"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination (pageChange)="loadPage($event)" [(page)]="ngbPaginationPage" [boundaryLinks]="true"
+                            [collectionSize]="totalItems" [maxSize]="5" [pageSize]="itemsPerPage"
+                            [rotate]="true"></ngb-pagination>
+        </div>
+    </div>
+</div>

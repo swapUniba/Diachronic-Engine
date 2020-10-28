@@ -1,0 +1,79 @@
+<mat-card id="frequency-list-search">
+    <form (ngSubmit)="frequencyListRequest()" [formGroup]="searchForm" name="form" role="form">
+        <div class="d-flex">
+            <label class="form-control-label" for="search-type" jhiTranslate="global.form.search">Search</label>
+            <div class="form-group search-form-group">
+                <div class="radio-group-container">
+                    <mat-radio-group formControlName="searchType" id="search-type">
+                        <mat-radio-button
+                            [value]="frequencyListSearchType.WORDS">{{'frequency-list.search.type.words' | translate}}</mat-radio-button>
+                        <mat-radio-button
+                            [value]="frequencyListSearchType.LEMMAS">{{'frequency-list.search.type.lemmas' | translate}}</mat-radio-button>
+                        <mat-radio-button
+                            [value]="frequencyListSearchType.NOUNS">{{'frequency-list.search.type.nouns' | translate}}</mat-radio-button>
+                        <mat-radio-button
+                            [value]="frequencyListSearchType.VERBS">{{'frequency-list.search.type.verbs' | translate}}</mat-radio-button>
+                        <mat-radio-button
+                            [value]="frequencyListSearchType.ADJECTIVES">{{'frequency-list.search.type.adjectives' | translate}}</mat-radio-button>
+                        <mat-radio-button
+                            [value]="frequencyListSearchType.ADVERBS">{{'frequency-list.search.type.adverbs' | translate}}</mat-radio-button>
+                        <mat-radio-button
+                            [value]="frequencyListSearchType.PRONOUNS">{{'frequency-list.search.type.pronouns' | translate}}</mat-radio-button>
+                        <mat-radio-button
+                            [value]="frequencyListSearchType.CONJUNCTIONS">{{'frequency-list.search.type.conjunctions' | translate}}</mat-radio-button>
+                        <mat-radio-button
+                            [value]="frequencyListSearchType.PREPOSITIONS">{{'frequency-list.search.type.prepositions' | translate}}</mat-radio-button>
+                        <mat-radio-button
+                            [value]="frequencyListSearchType.NUMERALS">{{'frequency-list.search.type.numerals' | translate}}</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="form-group search-form-group">
+                <div class="radio-group-container">
+                    <mat-radio-group formControlName="searchFilter" id="search-filter">
+                        <mat-radio-button
+                            [value]="frequencyListSearchFilter.ALL">{{'frequency-list.search.filter.all' | translate}}</mat-radio-button>
+                        <mat-radio-button
+                            [value]="frequencyListSearchFilter.STARTING_WITH">{{'frequency-list.search.filter.starting_with' | translate}}</mat-radio-button>
+                        <mat-radio-button
+                            [value]="frequencyListSearchFilter.ENDING_WITH">{{'frequency-list.search.filter.ending_with' | translate}}</mat-radio-button>
+                        <mat-radio-button
+                            [value]="frequencyListSearchFilter.CONTAINING">{{'frequency-list.search.filter.containing' | translate}}</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div *ngIf="searchForm.get('searchFilter')?.value !== 'ALL'" class="form-group search-form-group">
+                <input aria-label="filter text" class="form-control" formControlName="searchFilterText"
+                       id="search-filter-text" name="search-filter-text"
+                       placeholder="{{ 'global.form.search.placeholder' | translate }}"
+                       type="text">
+            </div>
+            <div class="search-form-group ml-auto mr-0">
+                <div class="form-group date-container position-relative">
+                    <label class="form-control-label" for="start-date" jhiTranslate="global.form.search.startDate">Start
+                        date</label>
+                    <input (click)="startDatePicker.open()" [matDatepicker]="startDatePicker"
+                           [max]="endDatePicker._selected"
+                           class="form-control" formControlName="startDate" id="start-date" name="start-date">
+                    <mat-datepicker-toggle [for]="startDatePicker" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker #startDatePicker></mat-datepicker>
+                </div>
+                <div class="form-group date-container position-relative">
+                    <label class="form-control-label" for="end-date" jhiTranslate="global.form.search.endDate">End
+                        date</label>
+                    <input (click)="endDatePicker.open()" [matDatepicker]="endDatePicker"
+                           [min]="startDatePicker._selected"
+                           class="form-control" formControlName="endDate" id="end-date" name="end-date">
+                    <mat-datepicker-toggle [for]="endDatePicker" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker #endDatePicker></mat-datepicker>
+                </div>
+            </div>
+        </div>
+        <button [disabled]="searchForm.invalid || workingCorpus < 0 ||
+                (searchForm.get('searchFilter')?.value !== 'ALL' &&
+                (searchForm.get('searchFilterText')?.value === '' || searchForm.get('searchFilterText')?.value === null))"
+                class="mat-accent ml-auto mr-0 d-block"
+                jhiTranslate="global.form.search" mat-button type="submit">Search
+        </button>
+    </form>
+</mat-card>

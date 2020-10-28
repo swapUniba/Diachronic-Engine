@@ -1,0 +1,14 @@
+<div class="row m-0 h-100 align-content-center justify-content-center" id="login-container-row">
+    <mat-card class="shadow-sm mx-auto my-sm-3 pb-0" id="login-container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-md-8 col-sm-8 col-8 py-5" id="logo-container">
+                <img [src]="'/content/images/logo-white.svg'" class="w-100"
+                     alt="Corpus Manager">
+            </div>
+            <div [@fadeAnimation]="getRouterOutletState(outlet)" class="col-12 position-relative overflow-hidden"
+                 id="login-animation-container">
+                <router-outlet #outlet="outlet"></router-outlet>
+            </div>
+        </div>
+    </mat-card>
+</div>

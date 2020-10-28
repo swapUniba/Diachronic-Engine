@@ -1,0 +1,12 @@
+#submit-button {
+  min-width: 7rem;
+}
+
+#username.ng-invalid,
+#password.ng-invalid {
+  border-left: 1px solid #ced4da;
+}
+
+.register-label {
+  font-weight: 500;
+}

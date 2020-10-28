@@ -1,0 +1,31 @@
+{
+  "frequency-list": {
+    "title": "Lista frequenze",
+    "search": {
+      "type": {
+        "words": "parole",
+        "lemmas": "lemma",
+        "nouns": "nomi",
+        "verbs": "verbi",
+        "adjectives": "aggettivi",
+        "adverbs": "avverbi",
+        "pronouns": "pronomi",
+        "conjunctions": "congiunzioni",
+        "prepositions": "preposizioni",
+        "numerals": "numerici"
+      },
+      "filter": {
+        "all": "tutti",
+        "starting_with": "che iniziano con",
+        "ending_with": "che finiscono con",
+        "containing": "che contengono"
+      }
+    },
+    "table": {
+      "heading": {
+        "word": "Parola",
+        "frequency": "Frequenza"
+      }
+    }
+  }
+}

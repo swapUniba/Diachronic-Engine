@@ -1,0 +1,13 @@
+{
+  "time-series": {
+    "title": "Time series",
+    "standard": "Standard",
+    "similarity": "Similarity",
+    "search": {
+      "addTerm": "Add term",
+      "addTerms": "Add terms"
+    },
+    "showShiftingPoints": "Show shifting points",
+    "hideShiftingPoints": "Hide shifting points"
+  }
+}

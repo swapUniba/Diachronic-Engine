@@ -1,0 +1,19 @@
+<div [hidden]="hidden()" id="corpus-selection">
+    <label class="small font-weight-bold" for="selected-corpus" jhiTranslate="global.corpus-selection.label">Selected
+        corpus</label>
+    <div *ngIf="corpora?.length === 0" class="alert alert-warning">
+        <span jhiTranslate="corpusManagerApp.corpus.home.notFound">No corpora found</span>
+    </div>
+    <form [formGroup]="selectForm">
+        <mat-select class="form-control" formControlName="selectCorpus" id="selected-corpus">
+            <input #corpusSearch (keydown)="$event.stopImmediatePropagation()"
+                   (keyup)="corpusSearchValue = corpusSearch.value.toLowerCase()"
+                   aria-label="Corpus search" class="form-control"/>
+            <mat-option (onSelectionChange)="setWorkingCorpus($event)"
+                        *ngFor="let corpus of corpora" [hidden]="!corpus.name.toLowerCase().includes(corpusSearchValue)"
+                        [value]="corpus.id" value="{{corpus.id}}">
+                <span>{{corpus.name}}</span>
+            </mat-option>
+        </mat-select>
+    </form>
+</div>

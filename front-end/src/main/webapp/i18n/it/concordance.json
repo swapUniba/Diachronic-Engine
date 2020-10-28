@@ -1,0 +1,16 @@
+{
+  "concordance": {
+    "title": "Concordanze",
+    "table": {
+      "heading": {
+        "source": "Origine",
+        "date": "Data",
+        "rightContext": "Contesto destro",
+        "leftContext": "Contesto sinistro",
+        "kwic": "KWIC",
+        "copy": "Copia"
+      }
+    },
+    "copySuccessful": "Copiato!"
+  }
+}

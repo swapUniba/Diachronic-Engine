@@ -1,0 +1,63 @@
+{
+  "name": "Corpus",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "minlength",
+        "maxlength"
+      ],
+      "fieldValidateRulesMinlength": "1",
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "periodStart",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "min",
+        "max"
+      ],
+      "fieldValidateRulesMin": "0",
+      "fieldValidateRulesMax": "9999"
+    },
+    {
+      "fieldName": "periodEnd",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "min",
+        "max"
+      ],
+      "fieldValidateRulesMin": "0",
+      "fieldValidateRulesMax": "9999"
+    },
+    {
+      "fieldName": "file",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "language",
+      "otherEntityRelationshipName": "corpus",
+      "relationshipName": "language",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200423184600",
+  "entityTableName": "corpus",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "clientRootFolder": "",
+  "applications": "*",
+  "searchEngine": "elasticsearch"
+}

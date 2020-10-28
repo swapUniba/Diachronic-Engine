@@ -1,0 +1,122 @@
+/* after changing this file run 'npm run webpack:build' */
+@import '~@angular/material/theming';
+
+@include mat-core();
+/***************************
+put Sass variables here:
+eg $input-color: red;
+****************************/
+// Override Bootstrap variables
+@import 'bootstrap-variables';
+// Import Bootstrap source files from node_modules
+@import '~bootstrap/scss/bootstrap';
+
+/* jhipster-needle-scss-add-vendor JHipster will add new css style */
+$cp-primary: (
+  50: #e0ecf2,
+  100: #b3cfde,
+  200: #80afc8,
+  300: #4d8eb1,
+  400: #2676a1,
+  500: #005e90,
+  600: #005688,
+  700: #004c7d,
+  800: #004273,
+  900: #003161,
+  A100: #91bfff,
+  A200: #5ea2ff,
+  A400: #2b84ff,
+  A700: #1275ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff
+  )
+);
+
+$cp-accent: (
+  50: #e2f1f1,
+  100: #b6dddd,
+  200: #85c7c6,
+  300: #54b0af,
+  400: #2f9f9e,
+  500: #0a8e8d,
+  600: #098685,
+  700: #077b7a,
+  800: #057170,
+  900: #035f5d,
+  A100: #90fffc,
+  A200: #5dfffb,
+  A400: #2afffa,
+  A700: #10fff9,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+
+$cp-warn: (
+  50: #fce9e8,
+  100: #f8c9c5,
+  200: #f4a59e,
+  300: #f08177,
+  400: #ec6659,
+  500: #e94b3c,
+  600: #e64436,
+  700: #e33b2e,
+  800: #df3327,
+  900: #d9231a,
+  A100: #ffffff,
+  A200: #ffdbda,
+  A400: #ffaaa7,
+  A700: #ff928d,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+
+$cp-theme-primary: mat-palette($cp-primary);
+$cp-theme-accent: mat-palette($cp-accent);
+$cp-theme-warn: mat-palette($cp-warn);
+
+$theme: mat-light-theme($cp-theme-primary, $cp-theme-accent, $cp-theme-warn);
+
+.custom-theme {
+  @include angular-material-theme($theme);
+}

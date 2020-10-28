@@ -1,0 +1,14 @@
+.table-responsive {
+  width: max-content;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#frequency-list-result-container {
+  display: flex;
+  justify-content: center;
+
+  > div {
+    margin: auto;
+  }
+}

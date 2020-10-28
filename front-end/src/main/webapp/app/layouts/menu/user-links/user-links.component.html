@@ -1,0 +1,28 @@
+<div class="menu-user-data">
+    <button (click)="userDataSelect.open()"
+            class="button-user-data" mat-stroked-button>
+        <img alt="{{getUsername()}}" src="{{getImageUrl()}}">
+    </button>
+    <mat-select #userDataSelect>
+        <mat-option class="user-data-option">
+            <a mat-button routerLink="account/settings"
+               routerLinkActive="mat-accent">
+                <mat-icon class="mr-2">build</mat-icon>
+                <span jhiTranslate="global.menu.account.settings">Settings</span>
+            </a>
+        </mat-option>
+        <mat-option class="user-data-option">
+            <a mat-button routerLink="account/password"
+               routerLinkActive="mat-accent">
+                <mat-icon class="mr-2">lock</mat-icon>
+                <span jhiTranslate="global.menu.account.password">Password</span>
+            </a>
+        </mat-option>
+        <mat-option class="user-data-option">
+            <a (click)="logout();" mat-button>
+                <mat-icon class="mr-2">exit_to_app</mat-icon>
+                <span jhiTranslate="global.menu.account.logout">Sign out</span>
+            </a>
+        </mat-option>
+    </mat-select>
+</div>

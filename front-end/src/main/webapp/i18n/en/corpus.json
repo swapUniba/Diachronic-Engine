@@ -1,0 +1,30 @@
+{
+  "corpusManagerApp": {
+    "corpus": {
+      "home": {
+        "title": "My corpora",
+        "createLabel": "Create a new Corpus",
+        "createOrEditLabel": "Create or edit a Corpus",
+        "search": "Search for Corpus",
+        "notFound": "No corpora found"
+      },
+      "created": "A new Corpus is created with identifier {{ param }}",
+      "updated": "A Corpus is updated with identifier {{ param }}",
+      "deleted": "A Corpus is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Corpus {{ id }}?"
+      },
+      "detail": {
+        "title": "My corpora"
+      },
+      "name": "Name",
+      "periodStart": "Period Start",
+      "periodEnd": "Period End",
+      "file": "File",
+      "language": "Language",
+      "isPublic": "Public",
+      "isPublic.yes": "Yes",
+      "isPublic.no": "No"
+    }
+  }
+}

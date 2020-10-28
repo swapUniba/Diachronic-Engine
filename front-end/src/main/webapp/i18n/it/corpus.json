@@ -1,0 +1,30 @@
+{
+  "corpusManagerApp": {
+    "corpus": {
+      "home": {
+        "title": "I miei corpora",
+        "createLabel": "Aggiungi un nuovo corpora",
+        "createOrEditLabel": "Aggiungi o modifica un corpora",
+        "search": "Cerca corpora",
+        "notFound": "Nessun corpora trovato"
+      },
+      "created": "&Egrave; stato generato un nuovo corpora con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato il corpora identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato il corpora con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare il corpora con id {{ id }}?"
+      },
+      "detail": {
+        "title": "I miei corpora"
+      },
+      "name": "Nome",
+      "periodStart": "Periodo temporale (inizio)",
+      "periodEnd": "Periodo temporale (fine)",
+      "file": "File",
+      "language": "Lingua",
+      "isPublic": "Pubblico",
+      "isPublic.yes": "Si",
+      "isPublic.no": "No"
+    }
+  }
+}

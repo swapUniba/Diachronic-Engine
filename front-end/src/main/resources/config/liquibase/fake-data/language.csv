@@ -1,0 +1,186 @@
+id;name;code;created_by
+1;Afar;aa;admin
+2;Abkhaz;ab;admin
+3;Avestan;ae;admin
+4;Afrikaans;af;admin
+5;Akan;ak;admin
+6;Amharic;am;admin
+7;Aragonese;an;admin
+8;Arabic;ar;admin
+9;Assamese;as;admin
+10;Avaric;av;admin
+11;Aymara;ay;admin
+12;Azerbaijani;az;admin
+13;South Azerbaijani;az;admin
+14;Bashkir;ba;admin
+15;Belarusian;be;admin
+16;Bulgarian;bg;admin
+17;Bihari;bh;admin
+18;Bislama;bi;admin
+19;Bambara;bm;admin
+20;Bengali Bangla;bn;admin
+21;Tibetan Standard, Tibetan, Central;bo;admin
+22;Breton;br;admin
+23;Bosnian;bs;admin
+24;Catalan, Valencian;ca;admin
+25;Chechen;ce;admin
+26;Chamorro;ch;admin
+27;Corsican;co;admin
+28;Cree;cr;admin
+29;Czech;cs;admin
+30;Old Church Slavonic, Church Slavonic, Old Bulgarian;cu;admin
+31;Chuvash;cv;admin
+32;Welsh;cy;admin
+33;Danish;da;admin
+34;German;de;admin
+35;Divehi, Dhivehi, Maldivian;dv;admin
+36;Dzongkha;dz;admin
+37;Ewe;ee;admin
+38;Greek, Modern;el;admin
+39;English;en;admin
+40;Esperanto;eo;admin
+41;Spanish, Castilian;es;admin
+42;Estonian;et;admin
+43;Basque;eu;admin
+44;Persian (Farsi);fa;admin
+45;Fula, Fulah, Pulaar, Pular;ff;admin
+46;Finnish;fi;admin
+47;Fijian;fj;admin
+48;Faroese;fo;admin
+49;French;fr;admin
+50;Western Frisian;fy;admin
+51;Irish;ga;admin
+52;Scottish Gaelic, Gaelic;gd;admin
+53;Galician;gl;admin
+54;Guaraní;gn;admin
+55;Gujarati;gu;admin
+56;Manx;gv;admin
+57;Hausa;ha;admin
+58;Hebrew (modern);he;admin
+59;Hindi;hi;admin
+60;Hiri Motu;ho;admin
+61;Croatian;hr;admin
+62;Haitian, Haitian Creole;ht;admin
+63;Hungarian;hu;admin
+64;Armenian;hy;admin
+65;Herero;hz;admin
+66;Interlingua;ia;admin
+67;Indonesian;id;admin
+68;Interlingue;ie;admin
+69;Igbo;ig;admin
+70;Nuosu;ii;admin
+71;Inupiaq;ik;admin
+72;Ido;io;admin
+73;Icelandic;is;admin
+74;Italian;it;admin
+75;Inuktitut;iu;admin
+76;Japanese;ja;admin
+77;Javanese;jv;admin
+78;Georgian;ka;admin
+79;Kongo;kg;admin
+80;Kikuyu, Gikuyu;ki;admin
+81;Kwanyama, Kuanyama;kj;admin
+82;Kazakh;kk;admin
+83;Kalaallisut, Greenlandic;kl;admin
+84;Khmer;km;admin
+85;Kannada;kn;admin
+86;Korean;ko;admin
+87;Kanuri;kr;admin
+88;Kashmiri;ks;admin
+89;Kurdish;ku;admin
+90;Komi;kv;admin
+91;Cornish;kw;admin
+92;Kyrgyz;ky;admin
+93;Latin;la;admin
+94;Luxembourgish, Letzeburgesch;lb;admin
+95;Ganda;lg;admin
+96;Limburgish, Limburgan, Limburger;li;admin
+97;Lingala;ln;admin
+98;Lao;lo;admin
+99;Lithuanian;lt;admin
+100;Luba-Katanga;lu;admin
+101;Latvian;lv;admin
+102;Malagasy;mg;admin
+103;Marshallese;mh;admin
+104;Māori;mi;admin
+105;Macedonian;mk;admin
+106;Malayalam;ml;admin
+107;Mongolian;mn;admin
+108;Marathi (Marāṭhī);mr;admin
+109;Malay;ms;admin
+110;Maltese;mt;admin
+111;Burmese;my;admin
+112;Nauru;na;admin
+113;Norwegian Bokmål;nb;admin
+114;North Ndebele;nd;admin
+115;Nepali;ne;admin
+116;Ndonga;ng;admin
+117;Dutch;nl;admin
+118;Norwegian Nynorsk;nn;admin
+119;Norwegian;no;admin
+120;South Ndebele;nr;admin
+121;Navajo, Navaho;nv;admin
+122;Chichewa, Chewa, Nyanja;ny;admin
+123;Occitan;oc;admin
+124;Ojibwe, Ojibwa;oj;admin
+125;Oromo;om;admin
+126;Oriya;or;admin
+127;Ossetian, Ossetic;os;admin
+128;Panjabi, Punjabi;pa;admin
+129;Pāli;pi;admin
+130;Polish;pl;admin
+131;Pashto, Pushto;ps;admin
+132;Portuguese;pt;admin
+133;Quechua;qu;admin
+134;Romansh;rm;admin
+135;Kirundi;rn;admin
+136;Romanian;ro;admin
+137;Russian;ru;admin
+138;Kinyarwanda;rw;admin
+139;Sanskrit (Saṁskṛta);sa;admin
+140;Sardinian;sc;admin
+141;Sindhi;sd;admin
+142;Northern Sami;se;admin
+143;Sango;sg;admin
+144;Sinhala, Sinhalese;si;admin
+145;Slovak;sk;admin
+146;Slovene;sl;admin
+147;Samoan;sm;admin
+148;Shona;sn;admin
+149;Somali;so;admin
+150;Albanian;sq;admin
+151;Serbian;sr;admin
+152;Swati;ss;admin
+153;Southern Sotho;st;admin
+154;Sundanese;su;admin
+155;Swedish;sv;admin
+156;Swahili;sw;admin
+157;Tamil;ta;admin
+158;Telugu;te;admin
+159;Tajik;tg;admin
+160;Thai;th;admin
+161;Tigrinya;ti;admin
+162;Turkmen;tk;admin
+163;Tagalog;tl;admin
+164;Tswana;tn;admin
+165;Tonga (Tonga Islands);to;admin
+166;Turkish;tr;admin
+167;Tsonga;ts;admin
+168;Tatar;tt;admin
+169;Twi;tw;admin
+170;Tahitian;ty;admin
+171;Uyghur, Uighur;ug;admin
+172;Ukrainian;uk;admin
+173;Urdu;ur;admin
+174;Uzbek;uz;admin
+175;Venda;ve;admin
+176;Vietnamese;vi;admin
+177;Volapük;vo;admin
+178;Walloon;wa;admin
+179;Wolof;wo;admin
+180;Xhosa;xh;admin
+181;Yiddish;yi;admin
+182;Yoruba;yo;admin
+183;Zhuang, Chuang;za;admin
+184;Chinese;zh;admin
+185;Zulu;zu;admin

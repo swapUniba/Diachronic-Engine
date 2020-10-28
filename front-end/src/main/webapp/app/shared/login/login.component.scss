@@ -1,0 +1,41 @@
+@import '../../../content/scss/custom-variables';
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+#login-animation-container {
+  min-height: 19.5rem;
+}
+
+#login-container {
+  width: 100%;
+  max-width: 25rem;
+}
+
+@media (max-width: map-get($grid-breakpoints, 'sm')) {
+  #login-container {
+    min-height: 100%;
+  }
+}
+
+@media (max-height: 560px) {
+  #login-container-row {
+    display: block !important;
+
+    #logo-container {
+      padding-top: 1.5rem !important;
+      padding-bottom: 1.5rem !important;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  #login-animation-container {
+    min-height: 20rem;
+  }
+}

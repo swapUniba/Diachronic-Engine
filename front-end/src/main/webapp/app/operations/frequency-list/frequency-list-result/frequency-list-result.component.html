@@ -1,0 +1,48 @@
+<div class="py-3">
+    <h2 jhiTranslate="frequency-list.title">Frequency list</h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <h4>{{"global.form.search" | translate}} {{"global.terms.of" | translate}} {{'frequency-list.search.type.' + searchType.toLocaleLowerCase() | translate}}
+        <span
+            *ngIf="searchFilter !== frequencyListSearchFilter.ALL">{{'frequency-list.search.filter.' + searchFilter.toLocaleLowerCase() | translate}}
+            "{{searchFilterText}}"</span>
+        <span *ngIf="startDate">{{"global.terms.from" | translate}} {{startDate}}</span>
+        <span *ngIf="endDate">{{"global.terms.to" | translate}} {{endDate}}</span>
+    </h4>
+    <section id="frequency-list-result-container">
+        <ng-container *ngIf="frequencyListResults">
+            <div *ngFor="let c of elements; let column = index" class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col"><span>#</span></th>
+                        <th scope="col"><span jhiTranslate="frequency-list.table.heading.word"></span></th>
+                        <th class="text-right" scope="col"><span
+                            jhiTranslate="frequency-list.table.heading.frequency"></span></th>
+                    </tr>
+                    </thead>
+                    <tbody *ngIf="frequencyListResults.values?.length > 0">
+                    <tr *ngFor="let value of frequencyListResults.values | slice:column * ITEMS_PER_COLUMN:(column + 1) * ITEMS_PER_COLUMN; let i = index"
+                        class="small">
+                        <td>{{ITEMS_PER_COLUMN * column + i + 1}}</td>
+                        <td>{{value.word}}</td>
+                        <td>{{value.frequency}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </ng-container>
+    </section>
+    <div *ngIf="frequencyListResults?.values?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [itemsPerPage]="itemsPerPage" [page]="page" [total]="totalItems"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <!--            (pageChange)="loadPage($event)"-->
+            <ngb-pagination [(page)]="ngbPaginationPage" [boundaryLinks]="true"
+                            [collectionSize]="totalItems" [maxSize]="5" [pageSize]="itemsPerPage"
+                            [rotate]="true"></ngb-pagination>
+        </div>
+    </div>
+</div>

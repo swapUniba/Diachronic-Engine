@@ -1,0 +1,58 @@
+#time-series-search {
+  border: 2px solid #e6e6e6;
+
+  #search-container {
+    width: 50%;
+    max-width: 30rem;
+  }
+
+  #search-container.ng-invalid:not(form),
+  #search-container.ng-invalid:not(form) > div {
+    border: none;
+  }
+
+  .add-term-button {
+    display: block;
+    margin: auto 3rem 0.5rem auto;
+  }
+
+  #search-container {
+    display: inline-block;
+    vertical-align: top;
+
+    input {
+      width: calc(100% - 3rem);
+      display: inline-block;
+    }
+
+    .delete-term {
+      padding: 0;
+      min-width: 2rem;
+      width: calc(1.5em + 0.75rem + 5px);
+      height: calc(1.5em + 0.75rem + 5px);
+      float: right;
+    }
+  }
+
+  .date-block {
+    width: calc(25% - 4rem);
+    max-width: 18rem;
+  }
+
+  .date-container {
+    .mat-datepicker-toggle {
+      position: absolute;
+      right: 1px;
+      top: calc(2rem + 1px);
+      height: calc(1.5em + 0.75rem);
+      width: calc(1.5em + 0.75rem);
+      background-color: #fff;
+
+      ::ng-deep > button {
+        height: 100%;
+        width: 100%;
+        line-height: 2.2rem;
+      }
+    }
+  }
+}

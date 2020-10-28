@@ -1,0 +1,47 @@
+#frequency-list-search {
+  border: 2px solid #e6e6e6;
+
+  .date-container {
+    .mat-datepicker-toggle {
+      position: absolute;
+      right: 1px;
+      top: calc(2rem + 1px);
+      height: calc(1.5em + 0.75rem);
+      width: calc(1.5em + 0.75rem);
+      background-color: #fff;
+
+      ::ng-deep > button {
+        height: 100%;
+        width: 100%;
+        line-height: 2.2rem;
+      }
+    }
+  }
+
+  .mat-radio-group.ng-invalid:not(form) {
+    border-left: 0;
+  }
+
+  .radio-group-container {
+    border-radius: 0.25rem;
+    border: 2px solid #e6e6e6;
+    padding: 1rem;
+
+    > .mat-radio-group {
+      display: flex;
+      flex-flow: column;
+
+      ::ng-deep .mat-radio-button:last-child > .mat-radio-label {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .search-form-group {
+    display: inline-block;
+    width: calc(25% - 4rem);
+    max-width: 18rem;
+    vertical-align: top;
+    margin: 0 1rem;
+  }
+}

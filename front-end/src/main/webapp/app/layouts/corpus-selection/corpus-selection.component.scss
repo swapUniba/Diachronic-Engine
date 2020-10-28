@@ -1,0 +1,15 @@
+#corpus-selection {
+  width: 50%;
+  max-width: 35rem;
+  float: right;
+  text-align: right;
+}
+
+::ng-deep {
+  @media (min-width: 992px) {
+    .mat-select-panel {
+      margin-left: 0 !important;
+      padding: 4px !important;
+    }
+  }
+}

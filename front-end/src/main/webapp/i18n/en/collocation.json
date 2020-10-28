@@ -1,0 +1,17 @@
+{
+  "collocation": {
+    "title": "Collocation",
+    "table": {
+      "heading": {
+        "NOUN": "Names",
+        "VERB": "Verbs",
+        "ADJECTIVE": "Adjectives",
+        "ADVERB": "Adverbs",
+        "PRONOUN": "Pronouns",
+        "CONJUNCTION": "Conjunctions",
+        "PREPOSITION": "Prepositions",
+        "NUMERAL": "Numerals"
+      }
+    }
+  }
+}

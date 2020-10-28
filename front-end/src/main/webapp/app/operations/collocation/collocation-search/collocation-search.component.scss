@@ -1,0 +1,26 @@
+#collocation-search {
+  border: 2px solid #e6e6e6;
+
+  #search-container,
+  .date-container {
+    width: 50%;
+    max-width: 30rem;
+  }
+
+  .date-container {
+    .mat-datepicker-toggle {
+      position: absolute;
+      right: 1px;
+      top: calc(2rem + 1px);
+      height: calc(1.5em + 0.75rem);
+      width: calc(1.5em + 0.75rem);
+      background-color: #fff;
+
+      ::ng-deep > button {
+        height: 100%;
+        width: 100%;
+        line-height: 2.2rem;
+      }
+    }
+  }
+}

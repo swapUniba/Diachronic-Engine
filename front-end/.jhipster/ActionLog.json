@@ -1,0 +1,54 @@
+{
+  "name": "ActionLog",
+  "fields": [
+    {
+      "fieldName": "corpusId",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "corpusName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "minlength",
+        "maxlength"
+      ],
+      "fieldValidateRulesMinlength": "1",
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "action",
+      "fieldType": "Action",
+      "fieldValues": "FREQUENCY_LIST,COLLOCATION,TIME_SERIES,CONCORDANCE",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "request",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "minlength",
+        "maxlength"
+      ],
+      "fieldValidateRulesMinlength": "1",
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200505200800",
+  "entityTableName": "action_log",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "clientRootFolder": "",
+  "applications": "*",
+  "searchEngine": "elasticsearch"
+}

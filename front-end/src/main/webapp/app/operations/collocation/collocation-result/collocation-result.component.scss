@@ -1,0 +1,12 @@
+#collocation-result-container {
+  overflow: auto;
+  white-space: nowrap;
+
+  .table-responsive {
+    width: max-content;
+    min-width: 15rem;
+    margin: 0 1rem;
+    display: inline-block;
+    vertical-align: top;
+  }
+}

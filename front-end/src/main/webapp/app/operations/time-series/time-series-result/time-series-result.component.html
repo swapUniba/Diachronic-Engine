@@ -1,0 +1,22 @@
+<div class="py-3">
+    <h2 jhiTranslate="time-series.title">Time series</h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <h4>{{"global.form.search" | translate}} {{"global.terms.of" | translate}} {{terms}}
+        <span *ngIf="startDate">{{"global.terms.from" | translate}} {{startDate}}</span>
+        <span *ngIf="endDate">{{"global.terms.to" | translate}} {{endDate}}</span>
+    </h4>
+    <div class="card card-accent-info mt-3">
+        <div class="card-body">
+            <div class="mt-4">
+                <div [options]="options" echarts></div>
+            </div>
+        </div>
+    </div>
+    <button (click)="switchShiftingPoints()" class="mat-accent d-block mt-4 mx-auto"
+            mat-flat-button type="button">
+        <span *ngIf="!shiftingPointsEnabled">{{'time-series.showShiftingPoints' | translate}}</span>
+        <span *ngIf="shiftingPointsEnabled">{{'time-series.hideShiftingPoints' | translate}}</span>
+    </button>
+</div>
+

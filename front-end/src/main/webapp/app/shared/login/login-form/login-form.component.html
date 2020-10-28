@@ -1,0 +1,33 @@
+<form (ngSubmit)="login()" [formGroup]="loginForm" class="form row pb-3" role="form">
+    <div class="form-group col-12">
+        <label class="username-label small text-white" for="username" jhiTranslate="global.form.username.label">Username
+            or password</label>
+        <input class="form-control" formControlName="username" id="username" name="username"
+               type="text">
+    </div>
+    <div class="form-group col-12">
+        <label class="small text-white" for="password" jhiTranslate="login.form.password">Password</label>
+        <input class="form-control" formControlName="password" id="password" name="password"
+               type="password">
+    </div>
+    <div class="form-check py-2 col-6">
+        <mat-checkbox formControlName="rememberMe" id="rememberMe" name="rememberMe">
+            <span class="small text-white" jhiTranslate="login.form.rememberme">Remember me</span>
+        </mat-checkbox>
+    </div>
+    <div class="col-6 py-2 text-right">
+        <a (click)="requestResetPassword()" class="small text-white" jhiTranslate="login.password.forgot">Did you
+            forget
+            your password?</a>
+    </div>
+    <div class="col-12 d-flex justify-content-center pt-1">
+        <button [disabled]="loginForm.invalid" class="btn btn-accent text-white" id="submit-button"
+                jhiTranslate="login.form.button" type="submit">Sign in
+        </button>
+    </div>
+    <p class="text-white small pt-3 px-3 text-right w-100">
+        <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>
+        <a (click)="register()" class="register-label" jhiTranslate="global.messages.info.register.link">Register a
+            new account</a>
+    </p>
+</form>

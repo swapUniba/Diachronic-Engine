@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="corpus">
+            <h2><span jhiTranslate="corpusManagerApp.corpus.detail.title">Corpus</span> {{ corpus.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="corpusManagerApp.corpus.name">Name</span></dt>
+                <dd>
+                    <span>{{ corpus.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="corpusManagerApp.corpus.periodStart">Period Start</span></dt>
+                <dd>
+                    <span>{{ corpus.periodStart }}</span>
+                </dd>
+                <dt><span jhiTranslate="corpusManagerApp.corpus.periodEnd">Period End</span></dt>
+                <dd>
+                    <span>{{ corpus.periodEnd }}</span>
+                </dd>
+                <dt><span jhiTranslate="corpusManagerApp.corpus.isPublic">Public</span></dt>
+                <dd>
+                    <button (click)="setPublic(corpus, true)" *ngIf="!corpus.isPublic" class="btn btn-danger btn-sm"
+                            jhiTranslate="corpusManagerApp.corpus.isPublic.no">No
+                    </button>
+                    <button (click)="setPublic(corpus, false)" *ngIf="corpus.isPublic" class="btn btn-success btn-sm"
+                            jhiTranslate="corpusManagerApp.corpus.isPublic.yes">Yes
+                    </button>
+                </dd>
+                <dt><span jhiTranslate="corpusManagerApp.corpus.language">Language</span></dt>
+                <dd>
+                    <div *ngIf="corpus.languageId">
+                        <span>{{ corpus.languageName }}</span>
+                    </div>
+                </dd>
+            </dl>
+
+            <button (click)="previousState()"
+                    class="btn btn-info"
+                    type="submit">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button [routerLink]="['/corpus', corpus.id, 'edit']"
+                    class="btn btn-primary"
+                    type="button">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form (ngSubmit)="save()" [formGroup]="editForm" name="editForm" novalidate role="form">
+            <h2 id="jhi-corpus-heading" jhiTranslate="corpusManagerApp.corpus.home.createOrEditLabel">Create or edit a
+                Corpus</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div [hidden]="!editForm.get('id')!.value" class="form-group">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input class="form-control" formControlName="id" id="id" name="id" readonly type="text"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name"
+                           jhiTranslate="corpusManagerApp.corpus.name">Name</label>
+                    <input class="form-control" formControlName="name" id="field_name" name="name"
+                           type="text"/>
+                    <div
+                        *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+                        <small *ngIf="editForm.get('name')?.errors?.required"
+                               class="form-text text-danger" jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                        <small *ngIf="editForm.get('name')?.errors?.minlength"
+                               [translateValues]="{ min: 1 }" class="form-text text-danger"
+                               jhiTranslate="entity.validation.minlength">
+                            This field is required to be at least 1 characters.
+                        </small>
+                        <small *ngIf="editForm.get('name')?.errors?.maxlength"
+                               [translateValues]="{ max: 255 }" class="form-text text-danger"
+                               jhiTranslate="entity.validation.maxlength">
+                            This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_periodStart"
+                           jhiTranslate="corpusManagerApp.corpus.periodStart">Period Start</label>
+                    <input class="form-control" formControlName="periodStart" id="field_periodStart" name="periodStart"
+                           #periodStart [max]="periodEnd.value" [min]="0" type="number"/>
+                    <div
+                        *ngIf="editForm.get('periodStart')!.invalid && (editForm.get('periodStart')!.dirty || editForm.get('periodStart')!.touched)">
+                        <small *ngIf="editForm.get('periodStart')?.errors?.min"
+                               [translateValues]="{ min: 0 }" class="form-text text-danger"
+                               jhiTranslate="entity.validation.min">
+                            This field should be at least 0.
+                        </small>
+                        <small *ngIf="editForm.get('periodStart')?.errors?.max"
+                               [translateValues]="{ max: 9999 }" class="form-text text-danger"
+                               jhiTranslate="entity.validation.max">
+                            This field cannot be more than 9999.
+                        </small>
+                        <small [hidden]="!editForm.get('periodStart')?.errors?.number"
+                               class="form-text text-danger" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_periodEnd"
+                           jhiTranslate="corpusManagerApp.corpus.periodEnd">Period End</label>
+                    <input class="form-control" formControlName="periodEnd" id="field_periodEnd" name="periodEnd"
+                           #periodEnd [max]="9999" [min]="periodStart.value" type="number"/>
+                    <div
+                        *ngIf="editForm.get('periodEnd')!.invalid && (editForm.get('periodEnd')!.dirty || editForm.get('periodEnd')!.touched)">
+                        <small *ngIf="editForm.get('periodEnd')?.errors?.min"
+                               [translateValues]="{ min: 0 }" class="form-text text-danger"
+                               jhiTranslate="entity.validation.min">
+                            This field should be at least 0.
+                        </small>
+                        <small *ngIf="editForm.get('periodEnd')?.errors?.max"
+                               [translateValues]="{ max: 9999 }" class="form-text text-danger"
+                               jhiTranslate="entity.validation.max">
+                            This field cannot be more than 9999.
+                        </small>
+                        <small [hidden]="!editForm.get('periodEnd')?.errors?.number"
+                               class="form-text text-danger" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="isPublic">
+                        <input class="form-check-input"
+                               formControlName="isPublic" id="isPublic" name="isPublic" type="checkbox">
+                        <span jhiTranslate="corpusManagerApp.corpus.isPublic">Public</span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_language"
+                           jhiTranslate="corpusManagerApp.corpus.language">Language</label>
+                    <select class="form-control" formControlName="languageId" id="field_language" name="language">
+                        <option [ngValue]="null"></option>
+                        <option *ngFor="let languageOption of languages; trackBy: trackById"
+                                [ngValue]="languageOption.id">{{ languageOption.name }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button (click)="previousState()" class="btn btn-secondary" id="cancel-save" type="button">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button [disabled]="editForm.invalid || isSaving" class="btn btn-primary" id="save-entity"
+                        type="submit">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
